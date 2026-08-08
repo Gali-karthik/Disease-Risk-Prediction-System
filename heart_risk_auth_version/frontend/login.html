@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | AI Disease Risk Prediction</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="auth-page">
+    <section class="auth-card">
+      <h1>AI Disease Risk Prediction</h1>
+      <p class="subtitle">Sign in to access the prediction system.</p>
+
+      <form id="loginForm">
+        <label>Email</label>
+        <input id="email" type="email" required autocomplete="email">
+
+        <label>Password</label>
+        <input id="password" type="password" required autocomplete="current-password">
+
+        <p id="error" class="error"></p>
+        <button type="submit" class="primary-btn">Login</button>
+      </form>
+
+      <p class="auth-link">Don't have an account?
+        <a href="register.html">Create one</a>
+      </p>
+    </section>
+  </main>
+
+  <script src="auth.js"></script>
+</body>
+</html>

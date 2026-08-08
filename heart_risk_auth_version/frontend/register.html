@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register | AI Disease Risk Prediction</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="auth-page">
+    <section class="auth-card">
+      <h1>Create Account</h1>
+      <p class="subtitle">Create an account to use the prediction system.</p>
+
+      <form id="registerForm">
+        <label>Name</label>
+        <input id="name" type="text" required autocomplete="name">
+
+        <label>Email</label>
+        <input id="email" type="email" required autocomplete="email">
+
+        <label>Password</label>
+        <input id="password" type="password" minlength="8" required autocomplete="new-password">
+
+        <label>Confirm Password</label>
+        <input id="confirmPassword" type="password" minlength="8" required autocomplete="new-password">
+
+        <p id="error" class="error"></p>
+        <button type="submit" class="primary-btn">Register</button>
+      </form>
+
+      <p class="auth-link">Already have an account?
+        <a href="login.html">Login</a>
+      </p>
+    </section>
+  </main>
+
+  <script src="auth.js"></script>
+</body>
+</html>

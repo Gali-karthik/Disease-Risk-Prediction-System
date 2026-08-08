@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Disease Risk Prediction</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>AI Disease Risk Prediction System</h1>
+      <p>Estimate heart disease risk using a supervised machine learning model.</p>
+    </div>
+    <div class="user-area">
+      <span id="welcomeUser"></span>
+      <button id="logoutButton" class="logout-btn">Logout</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Patient Risk Evaluation</h2>
+      <p class="notice">
+        This system provides an ML-based risk estimate and is not a medical diagnosis.
+      </p>
+
+      <form id="riskForm" class="form-grid">
+        <div>
+          <label for="age">Age</label>
+          <input id="age" type="number" min="1" max="120" placeholder="45" required>
+        </div>
+
+        <div>
+          <label for="sex">Gender</label>
+          <select id="sex" required>
+            <option value="">Select gender</option>
+            <option value="1">Male</option>
+            <option value="0">Female</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="cp">Chest Pain Type</label>
+          <select id="cp" required>
+            <option value="">Select pain type</option>
+            <option value="1">Type 1</option>
+            <option value="2">Type 2</option>
+            <option value="3">Type 3</option>
+            <option value="4">Type 4</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="trestbps">Resting Blood Pressure</label>
+          <input id="trestbps" type="number" min="80" max="220" placeholder="130" required>
+        </div>
+
+        <div>
+          <label for="chol">Cholesterol</label>
+          <input id="chol" type="number" min="100" max="600" placeholder="230" required>
+        </div>
+
+        <div>
+          <label for="fbs">Fasting Blood Sugar</label>
+          <select id="fbs" required>
+            <option value="">Select</option>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="restecg">Resting ECG</label>
+          <select id="restecg" required>
+            <option value="">Select ECG result</option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="thalach">Maximum Heart Rate Achieved</label>
+          <input id="thalach" type="number" min="60" max="220" placeholder="150" required>
+        </div>
+
+        <div>
+          <label for="exang">Exercise-Induced Angina</label>
+          <select id="exang" required>
+            <option value="">Select</option>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="oldpeak">ST Depression (oldpeak)</label>
+          <input id="oldpeak" type="number" min="0" max="10" step="0.1" placeholder="1.2" required>
+        </div>
+
+        <div>
+          <label for="slope">Slope of ST Segment</label>
+          <select id="slope" required>
+            <option value="">Select slope</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="ca">Number of Major Vessels (0-3)</label>
+          <input id="ca" type="number" min="0" max="3" placeholder="0" required>
+        </div>
+
+        <div>
+          <label for="thal">Thalassemia</label>
+          <select id="thal" required>
+            <option value="">Select thal</option>
+            <option value="3">3</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+          </select>
+        </div>
+
+        <div class="full-width">
+          <p id="formError" class="error"></p>
+          <button id="predictButton" type="submit" class="primary-btn">Predict Risk</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="results" class="card result-card hidden">
+      <h2>Prediction Result</h2>
+      <div id="riskLabel" class="risk-label"></div>
+      <div id="probability" class="probability"></div>
+      <p id="predictionMessage"></p>
+    </section>
+  </main>
+
+  <!-- Hidden on initial page load. Shown only while /predict is running. -->
+  <div id="loadingOverlay" class="loading-overlay hidden">
+    <div class="loader"></div>
+    <span>Evaluating risk, please wait...</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
